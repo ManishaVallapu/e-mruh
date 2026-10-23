@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-mruh | College Uniforms, Books & Study Materials</title>
+  <meta name="description" content="Official campus store for university uniforms, lab coats, textbooks, notes, and study essentials.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div>
+        <span class="top-bar-tag">Campus Exclusive</span>
+        <span>Semester 2026 Admissions: Get 15% off official uniforms & lab wear</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="#benefits">Hostel Delivery</a>
+        <a href="#categories">Departments</a>
+        <a href="#help">Campus Helpdesk</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="e-mruh Home">
+        <div class="brand-icon">E</div>
+        <div>
+          <span class="brand-title">e-mruh</span>
+          <span class="brand-tagline">Campus E-Commerce</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav id="navMenu" class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="shop.html" class="nav-link">Shop Catalog</a>
+        <a href="#uniforms" class="nav-link">Uniforms</a>
+        <a href="#books" class="nav-link">Study Materials</a>
+        <a href="login.html" id="navMenuLoginLink" class="nav-link">Login</a>
+        <a href="register.html" id="navMenuRegisterLink" class="nav-link">Register</a>
+        <a href="#benefits" class="nav-link">Campus Support</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Auth Container (Populated dynamically by app.js: shows Login/Register or User Menu) -->
+        <div id="navAuthContainer" class="nav-auth-container" style="display: flex; align-items: center; gap: 8px;">
+          <a href="login.html" id="navLoginBtn" class="nav-btn btn-secondary">Sign In</a>
+        </div>
+
+        <button type="button" id="cartBtn" class="cart-indicator" title="Shopping Cart" aria-label="View Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cartCount" class="cart-count">0</span>
+        </button>
+        <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          &#9776;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            Verified College Curriculum & Attire
+          </div>
+          <h1 class="hero-title">
+            Your Campus Essentials, <br>
+            <span>Uniforms & Books</span> in One Place.
+          </h1>
+          <p class="hero-desc">
+            Directly certified with department dress codes and faculty syllabi. Get high-grade college blazers, lab coats, semester textbooks, and scientific drawing tools delivered directly to your hostel room.
+          </p>
+          <div class="hero-actions">
+            <a href="#uniforms" class="hero-cta hero-cta-primary">
+              Shop Uniforms & Lab Coats &rarr;
+            </a>
+            <a href="#books" class="hero-cta hero-cta-secondary">
+              Find Course Books
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Dress Code Compliant</p>
+            </div>
+            <div class="stat-item">
+              <h4>24 Hrs</h4>
+              <p>On-Campus Delivery</p>
+            </div>
+            <div class="stat-item">
+              <h4>12+</h4>
+              <p>Academic Departments</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Graphic Card Preview -->
+        <div class="hero-card" aria-hidden="true">
+          <div class="hero-card-header">
+            <strong style="color: #ffffff; font-size: 0.95rem;">Quick Campus Starter Kit</strong>
+            <span class="hero-badge">Curated Pack</span>
+          </div>
+          <div class="hero-card-list">
+            <div class="hero-mini-item">
+              <div class="hero-mini-icon">&#128084;</div>
+              <div class="hero-mini-info">
+                <h5>Official College Uniform Set</h5>
+                <p>Shirt, Trouser &amp; Monogram Crest</p>
+              </div>
+            </div>
+            <div class="hero-mini-item">
+              <div class="hero-mini-icon">&#129514;</div>
+              <div class="hero-mini-info">
+                <h5>Standard 100% Cotton Lab Coat</h5>
+                <p>Flame-resistant for Chemistry &amp; Bio Labs</p>
+              </div>
+            </div>
+            <div class="hero-mini-item">
+              <div class="hero-mini-icon">&#128218;</div>
+              <div class="hero-mini-info">
+                <h5>Semester Textbook Bundle</h5>
+                <p>Latest University Regulation Syllabi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Props / Campus Benefits -->
+    <section id="benefits" class="benefits-section">
+      <div class="container">
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">&#127979;</div>
+            <div class="benefit-info">
+              <h4>College Approved</h4>
+              <p>Exact fabric specifications, badges, and prescribed editions.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">&#128666;</div>
+            <div class="benefit-info">
+              <h4>Hostel Delivery</h4>
+              <p>Same-day or next-day delivery to North &amp; South Campus dorms.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">&#128179;</div>
+            <div class="benefit-info">
+              <h4>Student Subsidies</h4>
+              <p>Exclusive university-subsidized pricing on course materials.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">&#9851;</div>
+            <div class="benefit-info">
+              <h4>Book Exchange</h4>
+              <p>Option to sell back textbooks at end-of-semester buyback rates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Cards -->
+    <section id="categories" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Browse by Department</span>
+          <h2 class="section-title">Everything You Need for Class &amp; Lab</h2>
+          <p class="section-desc">Select a category below to explore specific university gear, syllabus materials, and department dress requirements.</p>
+        </div>
+
+        <div class="category-grid">
+          <!-- Category 1 -->
+          <article class="category-card">
+            <div class="category-icon-wrapper">&#128084;</div>
+            <h3 class="category-card-title">Official Uniforms</h3>
+            <p class="category-card-desc">Formal shirts, trousers, tailored blazers, skirts, and embroidered institutional ties conforming strictly to dress codes.</p>
+            <div class="category-card-meta">
+              <span>Men &amp; Women Cuts</span>
+              <a href="#uniforms">&rarr; View Uniforms</a>
+            </div>
+          </article>
+
+          <!-- Category 2 -->
+          <article class="category-card">
+            <div class="category-icon-wrapper">&#129514;</div>
+            <h3 class="category-card-title">Lab Coats &amp; Aprons</h3>
+            <p class="category-card-desc">Durable, heavy-duty white cotton coats for Chemistry, Biology, Pharmacy, Medical, and Mechanical workshops.</p>
+            <div class="category-card-meta">
+              <span>Sizes XS to 3XL</span>
+              <a href="#uniforms">&rarr; View Lab Wear</a>
+            </div>
+          </article>
+
+          <!-- Category 3 -->
+          <article class="category-card">
+            <div class="category-icon-wrapper">&#128214;</div>
+            <h3 class="category-card-title">Academic Textbooks</h3>
+            <p class="category-card-desc">Prescribed textbooks and reference volumes for Engineering, Science, Management, Humanities, and Law.</p>
+            <div class="category-card-meta">
+              <span>New &amp; Verified Pre-owned</span>
+              <a href="#books">&rarr; Browse Books</a>
+            </div>
+          </article>
+
+          <!-- Category 4 -->
+          <article class="category-card">
+            <div class="category-icon-wrapper">&#9999;&#65039;</div>
+            <h3 class="category-card-title">Stationery &amp; Lab Manuals</h3>
+            <p class="category-card-desc">Graph sheets, engineering drawing mini-drafters, dissection boxes, college-crested record notebooks and manuals.</p>
+            <div class="category-card-meta">
+              <span>Department Standard</span>
+              <a href="#books">&rarr; Browse Stationery</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products: Uniforms & Wear -->
+    <section id="uniforms" class="section" style="background-color: var(--color-surface); border-top: 1px solid var(--color-border);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Department Attire</span>
+          <h2 class="section-title">College Uniforms &amp; Protective Gear</h2>
+          <p class="section-desc">Tailored to university regulation colors and durable fabrics built for everyday campus life.</p>
+        </div>
+
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <article class="product-card">
+            <span class="product-card-badge tag-uniform">Mandatory Wear</span>
+            <div class="product-image-box">
+              <div class="product-art-preview">
+                <span class="product-art-icon">&#128084;</span>
+                <span class="product-art-label">Formal College Shirt</span>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-label">Uniforms</span>
+              <h3 class="product-title">Official Campus Formal Shirt (Sky Blue)</h3>
+              <p class="product-specs">Cotton blend, wrinkle-free, embroidered monogram on left pocket.</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  &#8377;650 <span class="original-price">&#8377;800</span>
+                </div>
+                <button type="button" class="btn-add-cart" data-action="add-to-cart" data-id="u1" data-title="Official Formal Shirt (Sky Blue)" data-price="650" data-category="Uniforms">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card">
+            <span class="product-card-badge tag-uniform">Dress Code</span>
+            <div class="product-image-box">
+              <div class="product-art-preview">
+                <span class="product-art-icon">&#128086;</span>
+                <span class="product-art-label">Formal Navy Trousers</span>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-label">Uniforms</span>
+              <h3 class="product-title">Tailored Navy Blue College Trousers</h3>
+              <p class="product-specs">Breathable poly-viscose blend, reinforced seams, all standard waist sizes.</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  &#8377;750 <span class="original-price">&#8377;950</span>
+                </div>
+                <button type="button" class="btn-add-cart" data-action="add-to-cart" data-id="u2" data-title="Tailored Navy Blue Trousers" data-price="750" data-category="Uniforms">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card">
+            <span class="product-card-badge tag-lab">Lab Mandatory</span>
+            <div class="product-image-box">
+              <div class="product-art-preview">
+                <span class="product-art-icon">&#129514;</span>
+                <span class="product-art-label">White Lab Coat</span>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-label">Lab Gear</span>
+              <h3 class="product-title">Pure Cotton White Laboratory Coat</h3>
+              <p class="product-specs">Unisex cut, deep 3-pocket design with button closure, knee-length protection.</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  &#8377;499 <span class="original-price">&#8377;650</span>
+                </div>
+                <button type="button" class="btn-add-cart" data-action="add-to-cart" data-id="u3" data-title="Pure Cotton White Lab Coat" data-price="499" data-category="Lab Gear">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product-card">
+            <span class="product-card-badge tag-uniform">Ceremony &amp; Events</span>
+            <div class="product-image-box">
+              <div class="product-art-preview">
+                <span class="product-art-icon">&#129699;</span>
+                <span class="product-art-label">Official Blazer</span>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-label">Uniforms</span>
+              <h3 class="product-title">University Navy Blazer with Brass Crest</h3>
+              <p class="product-specs">Premium suiting material with golden crest buttons and padded shoulders.</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  &#8377;2,199 <span class="original-price">&#8377;2,600</span>
+                </div>
+                <button type="button" class="btn-add-cart" data-action="add-to-cart" data-id="u4" data-title="University Navy Blazer" data-price="2199" data-category="Uniforms">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products: Study Materials & Books -->
+    <section id="books" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Academic Resources</span>
+          <h2 class="section-title">Course Books &amp; Study Materials</h2>
+          <p class="section-desc">Accredited university syllabus textbooks, practical lab records, and engineering tools.</p>
+        </div>
+
+        <div class="products-grid" id="products">
+          <!-- Product 5 -->
+          <article class="product-card">
+            <span class="product-card-badge tag-study">Prescribed Syllabus</span>
+            <div class="product-image-box">
+              <div class="product-art-preview">
+                <span class="product-art-icon">&#128218;</span>
+                <span class="product-art-label">Engineering Physics</span>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-label">Textbooks</span>
+              <h3 class="product-title">Higher Engineering Mathematics &amp; Physics</h3>
+              <p class="product-specs">Standard 2026 Semester 1-4 curriculum, includes solved university papers.</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  &#8377;580 <span class="original-price">&#8377;720</span>
+                </div>
+                <button type="button" class="btn-add-cart" data-action="add-to-cart" data-id="b1" data-title="Higher Engineering Math &amp; Physics" data-price="580" data-category="Textbooks">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 6 -->
+          <article class="product-card">
+            <span class="product-card-badge tag-study">Lab Essential</span>
+            <div class="product-image-box">
+              <div class="product-art-preview">
+                <span class="product-art-icon">&#128221;</span>
+                <span class="product-art-label">Practical Record Notebook</span>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-label">Stationery</span>
+              <h3 class="product-title">Hardbound Practical Lab Record (Pack of 3)</h3>
+              <p class="product-specs">Alternate plain &amp; ruled 100 GSM ledger pages with pre-printed index format.</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  &#8377;240 <span class="original-price">&#8377;300</span>
+                </div>
+                <button type="button" class="btn-add-cart" data-action="add-to-cart" data-id="b2" data-title="Practical Lab Record (Pack of 3)" data-price="240" data-category="Stationery">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 7 -->
+          <article class="product-card">
+            <span class="product-card-badge tag-study">Drawing Gear</span>
+            <div class="product-image-box">
+              <div class="product-art-preview">
+                <span class="product-art-icon">&#128208;</span>
+                <span class="product-art-label">Engineering Mini-Drafter</span>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-label">Tools</span>
+              <h3 class="product-title">Professional Engineering Mini-Drafter Kit</h3>
+              <p class="product-specs">Stainless steel clamp, unbreakable scale, protective canvas pouch included.</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  &#8377;420 <span class="original-price">&#8377;550</span>
+                </div>
+                <button type="button" class="btn-add-cart" data-action="add-to-cart" data-id="b3" data-title="Engineering Mini-Drafter Kit" data-price="420" data-category="Tools">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 8 -->
+          <article class="product-card">
+            <span class="product-card-badge tag-study">Reference Book</span>
+            <div class="product-image-box">
+              <div class="product-art-preview">
+                <span class="product-art-icon">&#128212;</span>
+                <span class="product-art-label">Data Structures &amp; Java</span>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-label">Textbooks</span>
+              <h3 class="product-title">Data Structures &amp; Object Oriented Programming</h3>
+              <p class="product-specs">Recommended CS/IT syllabus edition with lab practical code samples.</p>
+              <div class="product-footer">
+                <div class="product-price">
+                  &#8377;620 <span class="original-price">&#8377;790</span>
+                </div>
+                <button type="button" class="btn-add-cart" data-action="add-to-cart" data-id="b4" data-title="Data Structures &amp; OOP Java" data-price="620" data-category="Textbooks">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Toast Feedback Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span class="toast-icon">&#10003;</span>
+    <span id="toastMsg" class="toast-message">Item added to cart</span>
+  </div>
+
+  <!-- Cart Drawer Modal & Overlay -->
+  <div id="cartOverlay" class="cart-overlay" aria-hidden="true"></div>
+  <aside id="cartDrawer" class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title-wrap">
+        <h3 id="cartDrawerTitle" class="cart-drawer-title">Shopping Cart</h3>
+        <span id="cartDrawerCount" class="cart-drawer-badge">0 items</span>
+      </div>
+      <button type="button" id="cartCloseBtn" class="cart-close-btn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div id="cartItemsList" class="cart-drawer-body">
+      <!-- Dynamically populated via app.js -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>Estimated Subtotal</span>
+        <strong id="cartSubtotal" class="cart-total-amount">&#8377;0</strong>
+      </div>
+      <p class="cart-delivery-note">&#128666; Free delivery to campus hostels on orders</p>
+      <div class="cart-footer-actions">
+        <a href="checkout.html" id="cartCheckoutBtn" class="btn-checkout">Proceed to Checkout &rarr;</a>
+        <button type="button" id="cartContinueBtn" class="btn-continue-shopping">Continue Shopping</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer id="help" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>e-mruh</h3>
+          <p>The student-run campus e-commerce marketplace dedicated to uniform standards, academic textbooks, and laboratory supplies.</p>
+          <span class="footer-badge">&#127979; University Campus Store</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Uniforms &amp; Attire</h4>
+          <ul>
+            <li><a href="#uniforms">College Formal Shirts</a></li>
+            <li><a href="#uniforms">Navy Trousers</a></li>
+            <li><a href="#uniforms">Lab Coats &amp; Aprons</a></li>
+            <li><a href="#uniforms">Blazers &amp; Ties</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Study Materials</h4>
+          <ul>
+            <li><a href="#books">Engineering Textbooks</a></li>
+            <li><a href="#books">Lab Manuals &amp; Records</a></li>
+            <li><a href="#books">Drawing Equipment</a></li>
+            <li><a href="#books">Course Notes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Campus Support</h4>
+          <ul>
+            <li><a href="#benefits">Hostel Delivery Schedule</a></li>
+            <li><a href="#help">Size Guide &amp; Tailoring</a></li>
+            <li><a href="#help">Used Book Exchange</a></li>
+            <li><a href="#help">Campus Helpdesk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 e-mruh Campus Store. Built for university students and departments.</div>
+        <div class="footer-bottom-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#compliance">Dress Code Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/app.js?v=20261023b"></script>
+</body>
+</html>

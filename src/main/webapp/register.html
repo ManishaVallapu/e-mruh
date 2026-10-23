@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration | e-mruh College E-Commerce</title>
+  <meta name="description" content="Register your student account to access university-subsidized textbook discounts, verified uniform sizes, and hostel delivery.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div>
+        <span class="top-bar-tag">Campus Exclusive</span>
+        <span>Semester 2026 Admissions: Free direct-to-hostel delivery on all student orders</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="shop.html">Shop Catalog</a>
+        <a href="index.html#benefits">Hostel Delivery</a>
+        <a href="index.html#help">Campus Helpdesk</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="e-mruh Home">
+        <div class="brand-icon">E</div>
+        <div>
+          <span class="brand-title">e-mruh</span>
+          <span class="brand-tagline">Campus E-Commerce</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav id="navMenu" class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop Catalog</a>
+        <a href="shop.html?category=uniforms" class="nav-link">Uniforms</a>
+        <a href="shop.html?category=textbooks" class="nav-link">Books</a>
+        <a href="login.html" class="nav-link">Login</a>
+        <a href="register.html" class="nav-link active">Register</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <a href="shop.html" class="nav-btn btn-secondary">&larr; Return to Shop</a>
+        <button type="button" id="cartBtn" class="cart-indicator" title="Shopping Cart" aria-label="View Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cartCount" class="cart-count">0</span>
+        </button>
+        <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          &#9776;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs-bar">
+    <div class="container">
+      <nav class="breadcrumbs-list" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumbs-separator">&rsaquo;</span>
+        <a href="shop.html">Shop Catalog</a>
+        <span class="breadcrumbs-separator">&rsaquo;</span>
+        <span style="color: var(--color-primary); font-weight: 600;">Student Registration</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main Registration Content -->
+  <main class="auth-wrapper">
+    <div class="container">
+      <div class="auth-card auth-card-wide">
+        
+        <div class="auth-header">
+          <div class="auth-icon-badge">&#128221;</div>
+          <h1 class="auth-title">Create Student Account</h1>
+          <p class="auth-subtitle">Join e-mruh for verified uniforms, textbooks, and campus delivery</p>
+        </div>
+
+        <!-- Status Banner (Populated dynamically on form submit) -->
+        <div id="registerDemoBanner" class="auth-demo-banner" role="status" aria-live="polite" style="display: none;">
+          <div class="auth-demo-title"></div>
+          <p class="auth-demo-desc" id="registerDemoMessage"></p>
+        </div>
+
+        <form id="registerForm" novalidate>
+          <!-- Row 1: Full Name & Roll Number -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="regName" class="form-label">
+                Full Name <span class="required-star">*</span>
+              </label>
+              <input type="text" id="regName" class="form-input" placeholder="e.g. Ananya Sen" autocomplete="name" required>
+              <div id="regNameError" class="form-error">Please enter your full name (at least 2 characters).</div>
+            </div>
+
+            <div class="form-group">
+              <label for="regRoll" class="form-label">
+                Student ID / Roll Number <span class="required-star">*</span>
+              </label>
+              <input type="text" id="regRoll" class="form-input" placeholder="e.g. 24BCS1089" required>
+              <div id="regRollError" class="form-error">Please enter your student ID / roll number.</div>
+            </div>
+          </div>
+
+          <!-- Row 2: College Email & Mobile -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="regEmail" class="form-label">
+                College / Student Email <span class="required-star">*</span>
+              </label>
+              <input type="email" id="regEmail" class="form-input" placeholder="e.g. ananya@college.edu" autocomplete="email" required>
+              <div id="regEmailError" class="form-error">Please enter a valid email address.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="regMobile" class="form-label">
+                Mobile Number <span class="required-star">*</span>
+              </label>
+              <input type="tel" id="regMobile" class="form-input" placeholder="e.g. 9876543210" autocomplete="tel" required>
+              <div id="regMobileError" class="form-error">Please enter a valid 10-digit Indian mobile number.</div>
+            </div>
+          </div>
+
+          <!-- Row 3: Password & Confirm Password -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="regPassword" class="form-label">
+                Create Password <span class="required-star">*</span>
+              </label>
+              <div class="password-input-wrap">
+                <input type="password" id="regPassword" class="form-input" placeholder="Minimum 6 characters" autocomplete="new-password" required>
+                <button type="button" id="toggleRegPasswordBtn" class="password-toggle-btn" aria-label="Show or hide password">Show</button>
+              </div>
+              <div id="regPasswordError" class="form-error">Password must be at least 6 characters long.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="regConfirmPassword" class="form-label">
+                Confirm Password <span class="required-star">*</span>
+              </label>
+              <div class="password-input-wrap">
+                <input type="password" id="regConfirmPassword" class="form-input" placeholder="Re-enter password" autocomplete="new-password" required>
+                <button type="button" id="toggleConfirmPasswordBtn" class="password-toggle-btn" aria-label="Show or hide confirm password">Show</button>
+              </div>
+              <div id="regConfirmPasswordError" class="form-error">Passwords do not match.</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; padding: 13px; font-size: 1rem; font-weight: 700; border-radius: var(--radius-md); margin-top: 10px;">
+            Complete Registration &rarr;
+          </button>
+        </form>
+
+        <div class="auth-toggle-note">
+          Already have an account?
+          <br>
+          <a href="login.html">Sign in to your existing account &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Shared Cart Drawer Modal & Overlay -->
+  <div id="cartOverlay" class="cart-overlay" aria-hidden="true"></div>
+  <aside id="cartDrawer" class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title-wrap">
+        <h3 id="cartDrawerTitle" class="cart-drawer-title">Shopping Cart</h3>
+        <span id="cartDrawerCount" class="cart-drawer-badge">0 items</span>
+      </div>
+      <button type="button" id="cartCloseBtn" class="cart-close-btn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div id="cartItemsList" class="cart-drawer-body">
+      <!-- Dynamically populated via app.js -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>Estimated Subtotal</span>
+        <strong id="cartSubtotal" class="cart-total-amount">&#8377;0</strong>
+      </div>
+      <p class="cart-delivery-note">&#128666; Free delivery to campus hostels on orders</p>
+      <div class="cart-footer-actions">
+        <a href="checkout.html" id="cartCheckoutBtn" class="btn-checkout">Proceed to Checkout &rarr;</a>
+        <button type="button" id="cartContinueBtn" class="btn-continue-shopping">Continue Shopping</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Interactive Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span class="toast-icon">&#10003;</span>
+    <span id="toastMsg" class="toast-message">Notification</span>
+  </div>
+
+  <!-- Footer -->
+  <footer id="help" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>e-mruh</h3>
+          <p>The student-run campus e-commerce marketplace dedicated to uniform standards, academic textbooks, and laboratory supplies.</p>
+          <span class="footer-badge">&#127979; University Campus Store</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Uniforms &amp; Attire</h4>
+          <ul>
+            <li><a href="shop.html?category=uniforms">College Formal Shirts</a></li>
+            <li><a href="shop.html?category=uniforms">Navy Trousers</a></li>
+            <li><a href="shop.html?category=lab%20coats">Lab Coats &amp; Aprons</a></li>
+            <li><a href="shop.html?category=uniforms">Blazers &amp; Ties</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Study Materials</h4>
+          <ul>
+            <li><a href="shop.html?category=textbooks">Engineering Textbooks</a></li>
+            <li><a href="shop.html?category=stationery">Lab Manuals &amp; Records</a></li>
+            <li><a href="shop.html?category=stationery">Drawing Equipment</a></li>
+            <li><a href="shop.html?category=textbooks">Course Notes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Campus Support</h4>
+          <ul>
+            <li><a href="index.html#benefits">Hostel Delivery Schedule</a></li>
+            <li><a href="login.html">Student Account Login</a></li>
+            <li><a href="register.html">New Student Registration</a></li>
+            <li><a href="index.html#help">Campus Helpdesk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 e-mruh Campus Store. Built for university students and departments.</div>
+        <div class="footer-bottom-links">
+          <a href="index.html#privacy">Privacy Policy</a>
+          <a href="index.html#terms">Terms of Service</a>
+          <a href="index.html#compliance">Dress Code Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/mock-data.js?v=20261023"></script>
+  <script src="js/app.js?v=20261023"></script>
+  <script src="js/auth.js?v=20261023"></script>
+</body>
+</html>

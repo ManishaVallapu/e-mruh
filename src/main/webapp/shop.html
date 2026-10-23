@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Store Catalog | e-mruh College E-Commerce</title>
+  <meta name="description" content="Browse and order college uniforms, laboratory coats, semester engineering textbooks, lab manuals, and stationery for university students.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div>
+        <span class="top-bar-tag">Campus Exclusive</span>
+        <span>Semester 2026 Admissions: Get 15% off official uniforms &amp; lab wear</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="index.html#benefits">Hostel Delivery</a>
+        <a href="shop.html">All Products</a>
+        <a href="index.html#help">Campus Helpdesk</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="e-mruh Home">
+        <div class="brand-icon">E</div>
+        <div>
+          <span class="brand-title">e-mruh</span>
+          <span class="brand-tagline">Campus E-Commerce</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav id="navMenu" class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link active">Shop Catalog</a>
+        <a href="shop.html?category=uniforms" class="nav-link">Uniforms</a>
+        <a href="shop.html?category=textbooks" class="nav-link">Books</a>
+        <a href="login.html" class="nav-link">Login</a>
+        <a href="register.html" class="nav-link">Register</a>
+        <a href="index.html#benefits" class="nav-link">Campus Support</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <a href="index.html" class="nav-btn btn-secondary">Home</a>
+        <button type="button" id="cartBtn" class="cart-indicator" title="Shopping Cart" aria-label="View Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cartCount" class="cart-count">0</span>
+        </button>
+        <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          &#9776;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Shop Hero Header -->
+    <section class="shop-hero">
+      <div class="container">
+        <h1 class="shop-hero-title">Campus Store Catalog</h1>
+        <p class="shop-hero-subtitle">
+          Official college-compliant uniforms, protective lab wear, certified course textbooks, and precision engineering stationery.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Filter & Search Toolbar -->
+    <section class="shop-toolbar">
+      <div class="container shop-toolbar-inner">
+        <!-- Top row: Search & Sort -->
+        <div class="shop-search-sort-row">
+          <div class="shop-search-box">
+            <span class="shop-search-icon">&#128269;</span>
+            <input type="search" id="shopSearchInput" class="shop-search-input" placeholder="Search by uniform name, textbook subject, author, or equipment..." aria-label="Search college products">
+          </div>
+
+          <div class="shop-sort-box">
+            <label for="shopSortSelect" class="shop-sort-label">Sort By:</label>
+            <select id="shopSortSelect" class="shop-sort-select" aria-label="Sort products">
+              <option value="default">Featured &amp; Recommended</option>
+              <option value="price-low-high">Price: Low to High</option>
+              <option value="price-high-low">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Bottom row: Category Filter Pills -->
+        <div class="shop-filter-pills" role="toolbar" aria-label="Category filters">
+          <button type="button" class="filter-pill active" data-filter-category="all">All Items</button>
+          <button type="button" class="filter-pill" data-filter-category="Uniforms">Official Uniforms</button>
+          <button type="button" class="filter-pill" data-filter-category="Lab Coats">Lab Coats &amp; Aprons</button>
+          <button type="button" class="filter-pill" data-filter-category="Textbooks">Engineering &amp; Course Books</button>
+          <button type="button" class="filter-pill" data-filter-category="Stationery">Stationery &amp; Lab Records</button>
+          <button type="button" id="clearFiltersBtn" class="btn-clear-filters">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section class="section">
+      <div class="container">
+        <div class="shop-results-bar">
+          <span id="shopResultCount">Showing products...</span>
+          <span style="font-size: 0.85rem; color: var(--color-secondary-dark);">&#9889; Instant delivery to campus hostels</span>
+        </div>
+
+        <!-- Dynamic Product Grid populated by shop.js -->
+        <div id="shopProductsGrid" class="products-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Toast Feedback Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span class="toast-icon">&#10003;</span>
+    <span id="toastMsg" class="toast-message">Item added to cart</span>
+  </div>
+
+  <!-- Reused Cart Drawer Modal & Overlay -->
+  <div id="cartOverlay" class="cart-overlay" aria-hidden="true"></div>
+  <aside id="cartDrawer" class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title-wrap">
+        <h3 id="cartDrawerTitle" class="cart-drawer-title">Shopping Cart</h3>
+        <span id="cartDrawerCount" class="cart-drawer-badge">0 items</span>
+      </div>
+      <button type="button" id="cartCloseBtn" class="cart-close-btn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div id="cartItemsList" class="cart-drawer-body">
+      <!-- Dynamically populated via app.js -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>Estimated Subtotal</span>
+        <strong id="cartSubtotal" class="cart-total-amount">&#8377;0</strong>
+      </div>
+      <p class="cart-delivery-note">&#128666; Free delivery to campus hostels on orders</p>
+      <div class="cart-footer-actions">
+        <a href="checkout.html" id="cartCheckoutBtn" class="btn-checkout">Proceed to Checkout &rarr;</a>
+        <button type="button" id="cartContinueBtn" class="btn-continue-shopping">Continue Shopping</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer id="help" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>e-mruh</h3>
+          <p>The student-run campus e-commerce marketplace dedicated to uniform standards, academic textbooks, and laboratory supplies.</p>
+          <span class="footer-badge">&#127979; University Campus Store</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Uniforms &amp; Attire</h4>
+          <ul>
+            <li><a href="shop.html?category=uniforms">College Formal Shirts</a></li>
+            <li><a href="shop.html?category=uniforms">Navy Trousers</a></li>
+            <li><a href="shop.html?category=lab%20coats">Lab Coats &amp; Aprons</a></li>
+            <li><a href="shop.html?category=uniforms">Blazers &amp; Ties</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Study Materials</h4>
+          <ul>
+            <li><a href="shop.html?category=textbooks">Engineering Textbooks</a></li>
+            <li><a href="shop.html?category=stationery">Lab Manuals &amp; Records</a></li>
+            <li><a href="shop.html?category=stationery">Drawing Equipment</a></li>
+            <li><a href="shop.html?category=textbooks">Course Notes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Campus Support</h4>
+          <ul>
+            <li><a href="index.html#benefits">Hostel Delivery Schedule</a></li>
+            <li><a href="index.html#help">Size Guide &amp; Tailoring</a></li>
+            <li><a href="index.html#help">Used Book Exchange</a></li>
+            <li><a href="index.html#help">Campus Helpdesk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 e-mruh Campus Store. Built for university students and departments.</div>
+        <div class="footer-bottom-links">
+          <a href="index.html#privacy">Privacy Policy</a>
+          <a href="index.html#terms">Terms of Service</a>
+          <a href="index.html#compliance">Dress Code Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript Dependencies -->
+  <script src="js/mock-data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+# ==============================================================================
+# e-mruh Project .gitignore
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Java Compiler Build Output & Binaries
+# ------------------------------------------------------------------------------
+*.class
+build/
+bin/
+target/
+*.war
+*.ear
+
+# ------------------------------------------------------------------------------
+# 2. Eclipse & IDE Local Metadata
+# Keep core project facets and classpath configuration (.project, .classpath,
+# .settings/org.eclipse.wst.common.component, etc.) for repository cloning.
+# ------------------------------------------------------------------------------
+.metadata/
+.recommenders/
+.loadpath
+*.launch
+.factorypath
+
+# Eclipse core preferences that contain local workspace paths
+.settings/org.eclipse.core.resources.prefs
+
+# IntelliJ IDEA & VS Code
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+
+# ------------------------------------------------------------------------------
+# 3. Environment Variables, Secrets & Local Credentials
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.properties
+*.key
+*.pem
+*.pfx
+*.p12
+
+# ------------------------------------------------------------------------------
+# 4. Logs, Runtime Artifacts & Temporary Files
+# ------------------------------------------------------------------------------
+*.log
+logs/
+temp/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~
+
+# ------------------------------------------------------------------------------
+# 5. Database Local Dumps & Backups
+# Keep database/schema.sql and database/seed-products.sql intact.
+# ------------------------------------------------------------------------------
+*.sql.gz
+*.sql.bak
+*.dump
+backup/
+backups/
+
+# ------------------------------------------------------------------------------
+# 6. Operating System Generated Files
+# ------------------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ------------------------------------------------------------------------------
+# 7. Dependency JAR Management
+# Exclude generic JARs but explicitly PRESERVE the required MySQL Connector/J driver
+# located at src/main/webapp/WEB-INF/lib/
+# ------------------------------------------------------------------------------
+*.jar
+!src/main/webapp/WEB-INF/lib/*.jar
